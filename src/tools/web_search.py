@@ -24,8 +24,8 @@ async def tavily_search(
 
     Args:
         query: Search query to execute
-        max_results: Maximum number of results to return (default: 3)
         topic: Topic filter - 'general', 'news', or 'finance'. Use 'general' for broad searches, 'news' for current events, and 'finance' for financial topics.
+        max_results: Maximum number of results to return (default: 3)
 
     Returns:
         Formatted search results with full webpage content
