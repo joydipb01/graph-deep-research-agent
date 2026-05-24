@@ -10,7 +10,7 @@ load_dotenv()
 
 tavily_client = AsyncTavilyClient(os.environ["TAVILY_API_KEY"])
 
-# @tool(parse_docstring=True)
+@tool(parse_docstring=True)
 async def tavily_search(
     query: str,
     topic: Annotated[
