@@ -4,7 +4,7 @@ from langchain.tools import InjectedToolArg, tool
 from tavily import AsyncTavilyClient
 
 from dotenv import load_dotenv
-from src.utils.utils import fetch_webpage_content
+from src.utils.tasks import fetch_webpage_content
 
 load_dotenv()
 

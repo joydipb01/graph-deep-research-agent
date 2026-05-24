@@ -3,7 +3,7 @@ from typing import Annotated
 import httpx
 import feedparser
 
-from src.utils.utils import fetch_webpage_content
+from src.utils.tasks import fetch_webpage_content
 
 @tool(parse_docstring=True)
 async def search_arxiv(
