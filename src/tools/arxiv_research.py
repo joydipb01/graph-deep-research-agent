@@ -8,14 +8,14 @@ from src.utils.utils import fetch_webpage_content
 @tool(parse_docstring=True)
 async def search_arxiv(
     query: str, 
-    max_results: Annotated[int, InjectedToolArg] = 5
+    max_results: Annotated[int, InjectedToolArg] = 3
 ) -> list:
-    """Searches arXiv for the top 5 recent papers matching the query 
+    """Searches arXiv for the top 3 recent papers matching the query 
     and returns their titles, URLs, and content in markdown format.
 
     Args:
         query: Search query to execute
-        max_results: Maximum number of results to return (default: 5)
+        max_results: Maximum number of results to return (default: 3)
 
     Returns:
         Formatted search results with full paper content
