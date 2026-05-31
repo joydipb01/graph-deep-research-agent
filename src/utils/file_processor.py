@@ -1,5 +1,4 @@
 import pymupdf4llm
-import fitz
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from pgvector.psycopg2 import register_vector
