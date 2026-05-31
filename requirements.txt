@@ -1,0 +1,31 @@
+# Core LLM / LangChain stack
+langchain
+langchain-postgres
+langchain-openai
+langchain-openrouter
+
+# PDF → markdown extraction
+pymupdf4llm
+PyMuPDF
+
+# HTML → markdown conversion
+markdownify
+
+# Async HTTP client
+httpx
+
+# RSS/Atom feed parsing (arXiv)
+feedparser
+
+# Environment variable handling
+python-dotenv
+
+# PostgreSQL driver (psycopg v3) and pgvector support
+psycopg[binary]
+pgvector
+
+# Tavily web‑search tool
+tavily-python
+
+# Optional (used indirectly by LangChain / Pydantic)
+pydantic

@@ -1,15 +1,13 @@
 import pymupdf4llm
 import fitz
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_postgres import PGVector
 from langchain_openai import OpenAIEmbeddings
 from pgvector.psycopg2 import register_vector
 import os
 import psycopg
-from dotenv import load_dotenv
 import asyncio
 
-load_dotenv()
+from src.utils.database import get_connection_string
 
 
 async def _extract_markdown_from_pdf(pdf_path: str) -> str:
@@ -73,7 +71,7 @@ async def _store_chunks_in_pgvector(chunks: list, pdf_name: str, conn: psycopg.C
 async def process_pdf(pdf_path: str, conn_string: str = None) -> None:
     """Complete pipeline: extract markdown, chunk, and store in pgvector."""
     if conn_string is None:
-        conn_string = os.environ.get("DATABASE_URL", "postgresql://localhost:5432/graph_research")
+        conn_string = get_connection_string()
 
     # Extract markdown
     markdown = await _extract_markdown_from_pdf(pdf_path)
