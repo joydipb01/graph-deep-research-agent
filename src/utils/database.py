@@ -41,6 +41,24 @@ def get_pgvector_store(
     )
 
 
+def get_graph_store(
+    embeddings: Optional[Embeddings] = None,
+) -> PGVector:
+    """
+    Create a PGVector store instance specifically for graph_nodes.
+
+    Args:
+        embeddings: Embedding model to use (required for storing vectors)
+
+    Returns:
+        PGVector instance configured for graph_nodes table
+    """
+    return get_pgvector_store(
+        collection_name="graph_nodes",
+        embeddings=embeddings,
+    )
+
+
 async def initialize_database() -> bool:
     """
     Initialize database tables and extensions.

@@ -53,5 +53,6 @@ This document contains critical information about working with this codebase. Fo
 
 ## System Architecture
 
-- use pydantic, langchain, langgraph and streamlit
-- this project is a very simple chatbot. Keep files to a minimum
+- use LangChain with OpenAI/OpenRouter integrations and LangChain Postgres for vector storage
+- PostgreSQL with pgvector is the primary persistence layer for embeddings and graph data
+- uses Langchain's `deepagent` module to create the agent, and Streamlit as the frontend
